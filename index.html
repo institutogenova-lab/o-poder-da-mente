@@ -149,22 +149,41 @@
             top: -5px;
         }
 
-        /* GRID DE BENEFÍCIOS */
+       /* GRID DE BENEFÍCIOS ATUALIZADO (CARDS RETOS E ALINHADOS) */
         .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex; /* Mudamos para Flex para controlar o alinhamento */
+            flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
         }
 
         .benefit-card {
             background: rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 15px;
-            border-bottom: 4px solid var(--azul-neon);
+            border: 1px solid rgba(162, 210, 255, 0.2); /* Borda inteira suave */
+            border-top: 4px solid var(--azul-neon); /* Detalhe no topo para alinhar o olhar */
             text-align: left;
+            
+            /* Isso faz todos ficarem com a mesma altura */
+            flex: 1 1 250px; 
+            display: flex;
+            flex-direction: column;
+            min-height: 200px; /* Altura mínima para não ficarem achatados */
         }
 
-        .benefit-card h3 { color: var(--amarelo-ouro); margin-top: 0; }
+        .benefit-card h3 { 
+            color: var(--amarelo-ouro); 
+            margin-top: 0; 
+            font-size: 1.2em;
+            min-height: 2.4em; /* Alinha os títulos */
+        }
+
+        .benefit-card p {
+            margin-bottom: 0;
+            font-size: 0.95em;
+            color: #dbe4ef;
+        }
 
         /* SOBRE O MENTOR */
         .mentor-box {
@@ -245,22 +264,27 @@
         <div class="container">
             <h2>O que você vai aprender?</h2>
             <div class="benefits-grid">
+                
                 <div class="benefit-card">
                     <h3>Fundamentos Sólidos</h3>
-                    <p>Inteligência Emocional, Psicologia, PNL e Neurociência aplicada na prática.</p>
+                    <p>Inteligência Emocional, Psicologia, PNL e Neurociência aplicada na prática para resultados reais.</p>
                 </div>
+
                 <div class="benefit-card">
                     <h3>Governo Emocional</h3>
-                    <p>Aprenda a governar suas emoções com maturidade e romper padrões negativos.</p>
+                    <p>Aprenda a governar suas emoções com maturidade e romper definitivamente com padrões negativos.</p>
                 </div>
+
                 <div class="benefit-card">
                     <h3>Dinâmicas de Alto Impacto</h3>
-                    <p>Para quebrar bloqueios emocionais de forma profunda e imediata.</p>
+                    <p>Exercícios práticos para quebrar bloqueios emocionais de forma profunda e imediata no dia do evento.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <h3>Identidade</h3>
-                    <p>Fortaleça sua autoestima para uma vida próspera e equilibrada.</p>
+                    <h3>Identidade e Propósito</h3>
+                    <p>Fortaleça sua autoestima e clareza de quem você é para construir uma vida próspera e equilibrada.</p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -305,5 +329,6 @@
 
 </body>
 </html>
+
 
 
