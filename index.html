@@ -114,48 +114,39 @@
 
         .video-wrapper video { width: 100%; height: auto; max-height: 400px; }
 
-        /* ESTILO NOVO: SOBRE O MENTOR */
-        .mentor-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
+        /* FRASE DE IMPACTO */
+        .impact-quote {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 40px auto;
+            font-size: 1.5em;
+            color: var(--branco);
+            border-left: 4px solid var(--amarelo-ouro);
+            padding-left: 20px;
+            font-style: italic;
             text-align: left;
         }
-        
-        .mentor-name {
-            font-size: 2em;
-            color: var(--branco);
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            border-left: 5px solid var(--amarelo-ouro);
-            padding-left: 15px;
-        }
 
-        .mentor-role {
-            color: var(--azul-neon);
-            font-weight: bold;
-            font-size: 0.9em;
-            letter-spacing: 1px;
+        /* LISTA IMERSÃO */
+        .imersao-list {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            list-style: none;
+            padding: 0;
+        }
+        .imersao-list li {
             margin-bottom: 20px;
-            padding-left: 20px; /* Alinhado visualmente com o texto abaixo */
-            text-transform: uppercase;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.1em;
         }
-
-        .mentor-bio p {
-            margin-bottom: 15px;
-            color: #dbe4ef;
-        }
-
-        .mentor-highlight {
-            background: rgba(162, 210, 255, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 3px solid var(--azul-neon);
-            font-style: italic;
-            margin-top: 20px;
+        .imersao-list li::before {
+            content: "▪";
+            color: var(--amarelo-ouro);
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -5px;
         }
 
         /* GRID DE BENEFÍCIOS */
@@ -175,7 +166,20 @@
 
         .benefit-card h3 { color: var(--amarelo-ouro); margin-top: 0; }
 
-        /* SEÇÃO DE OFERTA */
+        /* SOBRE O MENTOR */
+        .mentor-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .mentor-name { font-size: 2em; color: var(--branco); text-transform: uppercase; margin-bottom: 5px; border-left: 5px solid var(--amarelo-ouro); padding-left: 15px; }
+        .mentor-role { color: var(--azul-neon); font-weight: bold; font-size: 0.9em; letter-spacing: 1px; margin-bottom: 20px; padding-left: 20px; text-transform: uppercase; }
+
+        /* OFERTA */
         .oferta-box {
             background: rgba(255,255,255,0.05);
             padding: 40px;
@@ -184,22 +188,12 @@
             display: inline-block;
             margin-top: 20px;
         }
-
-        .preco-antigo { text-decoration: line-through; opacity: 0.6; font-size: 1.2em; }
         .preco-novo { font-size: 3em; color: var(--amarelo-ouro); font-weight: bold; display: block; }
 
-        footer {
-            background: var(--azul-escuro);
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
+        footer { background: var(--azul-escuro); padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
 
         @media (max-width: 768px) {
-            .hero-flex { text-align: center; }
             .event-title { font-size: 2.5em; }
-            .mentor-box { padding: 20px; }
-            .mentor-name { font-size: 1.5em; }
         }
     </style>
 </head>
@@ -209,12 +203,12 @@
         <div class="container">
             <div class="hero-flex">
                 <div class="hero-text">
-                    <div class="hero-quote">“Dominar os outros é força, dominar-se a si mesmo é o verdadeiro poder.”</div>
+                    <div class="hero-quote">“Uma mente saudável é capaz de curar um corpo doente. Mas uma mente doente pode matar um corpo saudável.”</div>
                     <h1 class="event-title">O PODER</h1>
                     <h2 class="event-subtitle">DA MENTE</h2>
                     <p style="font-size: 1.4em; color: var(--amarelo-ouro); font-weight: bold;">Maracanaú - CE</p>
                     <p style="font-size: 1.2em; margin-bottom: 10px;">📅 31 de Janeiro de 2026</p>
-                    <p style="font-size: 1.1em; margin-bottom: 30px;">🎙️ Mentor: <strong>Adler Genova</strong>, fundador do Instituto GENOVA</p>
+                    <p style="font-size: 1.1em; margin-bottom: 30px;">🎙️ Mentor: <strong>Adler Genova</strong></p>
                     <a href="https://pay.kiwify.com.br/d17LLzo" class="cta-button">RESERVAR MINHA VAGA</a>
                 </div>
                 <div class="hero-image">
@@ -227,40 +221,27 @@
     <section class="section" style="background-color: rgba(0,0,0,0.2);">
         <div class="container">
             <h2>Um Chamado à Consciência</h2>
-            <p style="max-width: 800px; margin: 0 auto 30px auto; font-size: 1.1em;">
-                Este evento nasce como resposta às pressões da vida e emoções desordenadas. Um processo profundo de autoconhecimento e alinhamento interior.
-            </p>
             <div class="video-wrapper">
                 <video controls>
                     <source src="apresentacao.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
             </div>
+            
+    <section class="section">
+        <div class="container">
+            <h2 style="color: var(--azul-neon);">Imersão Presencial</h2>
+            <p style="font-size: 1.3em; margin-bottom: 30px;">Onde você vai:</p>
+            
+            <ul class="imersao-list">
+                <li><strong>Acessar seu Eu interior:</strong> Desenvolvendo autoconhecimento e alinhando seu propósito de vida.</li>
+                <li><strong>Desbloquear emoções:</strong> Curar traumas e ressignificar crenças limitantes e padrões de comportamento.</li>
+                <li><strong>Ativar sua mentalidade:</strong> Configurar o sucesso para transformar sua vida pessoal e profissional.</li>
+            </ul>
         </div>
     </section>
 
-    <section class="section" id="sobre">
-        <div class="container">
-            <h2>Quem é seu Mentor?</h2>
-            <div class="mentor-box">
-                <h3 class="mentor-name">ADLER GENOVA</h3>
-                <div class="mentor-role">HEAD TRAINER • MASTER COACH • REBIRTHER</div>
-                
-                <div class="mentor-bio">
-                    <p>Treinador de Inteligência Emocional, Master Coach, Rebirther e PNL Practitioner, Heart Coherencer e Palestrante.</p>
-                    
-                    <p>Formado pelo <strong>Instituto Brasileiro de Treinadores</strong>. Possui várias formações profissionais em desenvolvimento humano e saúde emocional.</p>
-                    
-                    <p>Estudou com os melhores mestres de desenvolvimento humano da atualidade, como <strong>Marcelo Lyouman</strong> (Master Trainer dos treinadores), <strong>Marcos Fiel</strong>, <strong>Marcos Paulo</strong> e <strong>Paulo Vieira</strong>.</p>
-                    
-                    <div class="mentor-highlight">
-                        Especialista em inteligência emocional, dedicou-se a desenvolver-se em identidade, saúde emocional e alta performance.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
+    <section class="section" style="background: rgba(255,255,255,0.02);">
         <div class="container">
             <h2>O que você vai aprender?</h2>
             <div class="benefits-grid">
@@ -273,9 +254,33 @@
                     <p>Aprenda a governar suas emoções com maturidade e romper padrões negativos.</p>
                 </div>
                 <div class="benefit-card">
-                    <h3>Identidade</h3>
-                    <p>Fortaleça sua identidade e autoestima para uma vida próspera e equilibrada.</p>
+                    <h3>Dinâmicas de Alto Impacto</h3>
+                    <p>Para quebrar bloqueios emocionais de forma profunda e imediata.</p>
                 </div>
+                <div class="benefit-card">
+                    <h3>Identidade</h3>
+                    <p>Fortaleça sua autoestima para uma vida próspera e equilibrada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="sobre">
+        <div class="container">
+            <h2>Quem é seu Mentor?</h2>
+            <div class="mentor-box">
+                <h3 class="mentor-name">ADLER GENOVA</h3>
+                <div class="mentor-role">HEAD TRAINER • MASTER COACH • REBIRTHER</div>
+                <div class="mentor-bio">
+                    <p>Treinador de Inteligência Emocional, Master Coach e PNL Practitioner.</p>
+                    <p>Estudou com os melhores mestres de desenvolvimento humano da atualidade, como Marcelo Lyouman, Marcos Fiel, Marcos Paulo e Paulo Vieira.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="impact-quote">
+                “Dominar os outros é força, dominar-se a si mesmo é o verdadeiro poder.”
             </div>
         </div>
     </section>
@@ -285,7 +290,7 @@
             <h2>Garanta sua Vaga</h2>
             <div class="oferta-box">
                 <span class="preco-antigo">De R$ 997,00</span>
-                <span class="preco-novo">R$ 247,00</span>
+                <span class="preco-novo">R$ 197,00</span>
                 <a href="https://pay.kiwify.com.br/d17LLzo" class="cta-button" style="margin-top: 20px;">QUERO ME INSCREVER</a>
             </div>
         </div>
@@ -293,7 +298,6 @@
 
     <footer>
         <p><strong>© 2026 INSTITUTO GÊNOVA</strong></p>
-        <p>CNPJ: 47.415.200/0001-79</p>
     </footer>
 
 </body>
